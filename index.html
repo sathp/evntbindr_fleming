@@ -53,7 +53,10 @@
                         </li>
                     </ul> -->
             </div>
-            </div>
+            </div>  
+            
+
+
         </nav>
         <!--/.Navbar-->
     </header>
@@ -89,6 +92,7 @@
         </div>
     </div>
     <!--/.Mask-->
+    <button class="btn btn-danger btn-lg" id="login_with_google" >Login with Google</button>
     <div class="container">
         <div id="story" class="divider-new">
             <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">our story</h2>
@@ -322,7 +326,9 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!--Google Maps-->
+    
     <script src="https://maps.google.com/maps/api/js"></script>
+   
     <script>
         function init_map() {
 
@@ -357,6 +363,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-database.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -364,12 +371,38 @@
     authDomain: "evntbindr-a5d5e.firebaseapp.com",
     databaseURL: "https://evntbindr-a5d5e.firebaseio.com",
     projectId: "evntbindr-a5d5e",
-    storageBucket: "",
+    storageBucket: "evntbindr-a5d5e.appspot.com",
     messagingSenderId: "111766807795"
   };
   firebase.initializeApp(config);
-</script>
 
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+    $('#login_with_google').click(function(){
+
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+ 
+
+    /*
+    
+    
+    */
+</script>
 </body>
 
 </html>
