@@ -34,3 +34,51 @@ input[type="text"]:not([readonly])+label {
 input[type="text"]:focus:not([readonly])+label {
 	color:#fff;
 }
+    
+    .nopadding {
+        margin-top: 0 !important;
+    }
+    
+    .navbar {
+        background-color: #e24e42;
+    }
+    
+    footer.page-footer {
+        background-color: #e24e42;
+        margin-top: 2rem;
+    }
+    
+    .pattern-4 {
+        background-attachment: fixed;
+    }
+    
+    .papaya {
+        background-color: #e24e42;
+    }
+    .papaya-i {
+       	color: #e24e42;
+    }
+    .mustard {
+        background-color: #e9b000;
+    }
+    
+    .blush {
+        background-color: #eb6e80;
+    }
+    
+    .aqua {
+        background-color: #008f95;
+    }
+    
+    #contact .fa {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #1C2331;
+    }
+      main {
+        margin-top: 3rem;
+    }
+    
+    main .card {
+        margin-bottom: 2rem;
+    }
