@@ -15,9 +15,14 @@
     <link href="css/style.css" rel="stylesheet">
     <style rel="stylesheet">
     /* TEMPLATE STYLES */
-
+    
+    .login_overlay {
+        z-index: 1000;
+        width: 320px;
+        display: block;
+        margin: 0 auto;
+    }
     </style>
-
 </head>
 
 <body>
@@ -32,31 +37,23 @@
                 <a class="navbar-brand" href="#">
                     <strong>evntbindr.</strong>
                 </a>
-                <ul class="nav navbar- ml-auto">
+                <ul class="nav navbar-nav ml-auto nav-flex-icons">
                     <li class="nav-item">
                         <a class="nav-link" href="#story">our story</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!">log in</a>
+                    <li class="nav-item log_in">
+                        <a class="nav-link" href="#!" id="login_with_google">log in / sign up</a>
+                    </li>
+                    <li class="nav-item dropdown btn-group">
+                        <a id="user_name" class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">user</a>
+                        <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item"><i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a>
+                            <a class="dropdown-item" id="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
+                        </div>
                     </li>
                 </ul>
-                <!--Navbar icons-->
-                <!-- <ul class="nav navbar-nav nav-flex-icons ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-instagram"></i></a>
-                        </li>
-                    </ul> -->
             </div>
-            </div>  
-            
-
-
+            </div>
         </nav>
         <!--/.Navbar-->
     </header>
@@ -92,7 +89,6 @@
         </div>
     </div>
     <!--/.Mask-->
-    <button class="btn btn-danger btn-lg" id="login_with_google" >Login with Google</button>
     <div class="container">
         <div id="story" class="divider-new">
             <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">our story</h2>
@@ -114,12 +110,10 @@
                     <!--Card-->
                     <div class="card wow fadeIn">
                         <!--Card image-->
-                       
-                            <img src="http://diibache.ir/files/fa/news/1395/12/23/14348_215.jpg" class="img-fluid" alt="image not available">
-                            <a>
-                                <div class="mask"></div>
-                            </a>
-                      
+                        <img src="http://diibache.ir/files/fa/news/1395/12/23/14348_215.jpg" class="img-fluid" alt="image not available">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
                         <!--/.Card image-->
                         <!--Card content-->
                         <div class="card-block text-center">
@@ -139,12 +133,10 @@
                     <!--Card-->
                     <div class="card wow fadeIn" data-wow-delay="0.2s">
                         <!--Card image-->
-                        
-                            <img src="https://media.giphy.com/media/Ci0fvzMoe4xKo/giphy.gif" class="img-fluid" alt="">
-                            <a>
-                                <div class="mask"></div>
-                            </a>
-                      
+                        <img src="https://media.giphy.com/media/Ci0fvzMoe4xKo/giphy.gif" class="img-fluid" alt="">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
                         <!--/.Card image-->
                         <!--Card content-->
                         <div class="card-block text-center">
@@ -164,12 +156,10 @@
                     <!--Card-->
                     <div class="card wow fadeIn" data-wow-delay="0.4s">
                         <!--Card image-->
-                        
-                            <img src="https://i.ytimg.com/vi/2AVWa4mtiT4/hqdefault.jpg" class="img-fluid" alt="">
-                            <a>
-                                <div class="mask"></div>
-                            </a>
-                        
+                        <img src="https://i.ytimg.com/vi/2AVWa4mtiT4/hqdefault.jpg" class="img-fluid" alt="">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
                         <!--/.Card image-->
                         <!--Card content-->
                         <div class="card-block text-center">
@@ -189,12 +179,11 @@
                     <!--Card-->
                     <div class="card wow fadeIn" data-wow-delay="0.6s">
                         <!--Card image-->
-                        
-                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(37).jpg" class="img-fluid" alt="">
-                            <a>
-                                <div class="mask"></div>
-                            </a>
-                                               <!--/.Card image-->
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(37).jpg" class="img-fluid" alt="">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
+                        <!--/.Card image-->
                         <!--Card content-->
                         <div class="card-block text-center">
                             <!--Title-->
@@ -220,7 +209,6 @@
                 <!--First column-->
                 <div class="col-md-8">
                     <div id="map-container" class="z-depth-1 wow fadeIn" style="height: 300px">
-                      
                     </div>
                 </div>
                 <!--/First column-->
@@ -326,83 +314,103 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!--Google Maps-->
-    
     <script src="https://maps.google.com/maps/api/js"></script>
-   
     <script>
-        function init_map() {
+    function init_map() {
 
-            var var_location = new google.maps.LatLng(17.419303, 78.374822);
+        var var_location = new google.maps.LatLng(17.419303, 78.374822);
 
-            var var_mapoptions = {
-                center: var_location,
+        var var_mapoptions = {
+            center: var_location,
 
-                zoom: 14
-            };
+            zoom: 14
+        };
 
-            var var_marker = new google.maps.Marker({
-                position: var_location,
-                map: var_map,
-                title: "evntbindr."
-            });
+        var var_marker = new google.maps.Marker({
+            position: var_location,
+            map: var_map,
+            title: "evntbindr."
+        });
 
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
+        var var_map = new google.maps.Map(document.getElementById("map-container"),
+            var_mapoptions);
 
-            var_marker.setMap(var_map);
+        var_marker.setMap(var_map);
 
-        }
+    }
 
-        google.maps.event.addDomListener(window, 'load', init_map);
+    google.maps.event.addDomListener(window, 'load', init_map);
     </script>
     <script>
     new WOW().init();
     </script>
- 
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-database.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAnTgoI54Z-LiR94TUDmu3ejDyrP0M_u-k",
-    authDomain: "evntbindr-a5d5e.firebaseapp.com",
-    databaseURL: "https://evntbindr-a5d5e.firebaseio.com",
-    projectId: "evntbindr-a5d5e",
-    storageBucket: "evntbindr-a5d5e.appspot.com",
-    messagingSenderId: "111766807795"
-  };
-  firebase.initializeApp(config);
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAnTgoI54Z-LiR94TUDmu3ejDyrP0M_u-k",
+        authDomain: "evntbindr-a5d5e.firebaseapp.com",
+        databaseURL: "https://evntbindr-a5d5e.firebaseio.com",
+        projectId: "evntbindr-a5d5e",
+        storageBucket: "evntbindr-a5d5e.appspot.com",
+        messagingSenderId: "111766807795"
+    };
+    firebase.initializeApp(config);
 
-  var provider = new firebase.auth.GoogleAuthProvider();
+    var provider = new firebase.auth.GoogleAuthProvider();
 
-    $('#login_with_google').click(function(){
-
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      // ...
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
+    $('#login_with_google').click(function() {
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
     });
- 
 
-    /*
-    
-    
-    */
-</script>
+    $('#logout').click(function() {
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+            // An error happened.
+        });
+    });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+            // User is signed in.
+            // 1. Logged In - Show Logout
+            console.log("User is Logged In");
+            console.log(user);
+            console.log("Email:", user.email, user.displayName, user.photoURL);
+
+            $('#user_name').show();
+            $('#user_name').html(user.displayName);
+            $('#login_with_google').hide();
+
+            // ...
+        } else {
+            // User is signed out.
+            // 2. Logged Out/ Not Logged In - Show "Login with Google"
+            console.log("User is not logged in");
+            $('#user_name').hide();
+            $('#login_with_google').show();
+            // ...
+        }
+
+    });
+    </script>
 </body>
 
 </html>
