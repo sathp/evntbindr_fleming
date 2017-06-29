@@ -6115,9 +6115,6 @@ i.btn-danger {
       -o-transition: 0.4s;
       -ms-transition: 0.4s;
       transition: 0.4s; }
-  .card img {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0; }
   .card .card-block {
     position: relative; }
   .card .card-footer {

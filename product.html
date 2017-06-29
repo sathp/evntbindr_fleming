@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Material Design Bootstrap</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+	 <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        
+        main {
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+        }
+        
+        .widget-wrapper {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 2rem;
+        }
+         
+        .reviews {
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .price {
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: -2px;
+        }
+        
+        .price .tag {
+            margin: 0;
+        }
+          .navbar {
+            background-color: #676b74;
+        }
+        
+        footer.page-footer {
+            background-color: #676b74;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+        <!--Main layout-->
+        <div class="container">
+            <div class="row">
+
+                <!--Sidebar-->
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+
+                    <div class="widget-wrapper">
+                        <h4>Categories:</h4>
+                        <br>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">Woman</a>
+                            <a href="#" class="list-group-item">Man</a>
+                            <a href="#" class="list-group-item">Shoes</a>
+                            <a href="#" class="list-group-item">T-shirt</a>
+                            <a href="#" class="list-group-item">Jewellery</a>
+                        </div>
+                    </div>
+
+                    <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
+                        <h4>Subscription form:</h4>
+                        <br>
+                        <div class="card">
+                            <div class="card-block">
+                                <p><strong>Subscribe to our newsletter</strong></p>
+                                <p>Once a week we will send you a summary of the most useful news</p>
+                                <div class="md-form">
+                                    <i class="fa fa-user prefix"></i>
+                                    <input type="text" id="form1" class="form-control">
+                                    <label for="form1">Your name</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-envelope prefix"></i>
+                                    <input type="text" id="form2" class="form-control">
+                                    <label for="form2">Your email</label>
+                                </div>
+                                <button class="btn btn-primary">Submit</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/.Sidebar-->
+
+                <!--Main column-->
+                <div class="col-lg-8">
+
+                    <!--First row-->
+                    <div class="row wow fadeIn" data-wow-delay="0.4s">
+                        <div class="col-md-12">
+                            <!--Product-->
+                            <div class="product-wrapper">
+
+                                <!--Featured image-->
+                                <div class="view overlay hm-white-light z-depth-1-half">
+                                    <img src="http://mdbootstrap.com/img/Photos/Slides/img%20(109).jpg" class="img-fluid " alt="">
+                                    <div class="mask">
+                                    </div>
+                                    <h3 class="price"><span class="badge red darken-2">10 $</span></h3>
+                                </div>
+                                <!--/.Featured image-->
+
+                                <br>
+
+                                <!--Product data-->
+                                <h2 class="h2-responsive">N-Convention</h2>
+                                <hr>
+                                <div class="row card_">
+  							<div class="col-md-2 flex-center"><i class="fa fa-fire fa-2x papaya-i" aria-hidden="true"></i></div>
+ 						 	<div class="col-md-10"><em>This property has been viewed <span id="page_hits"></span> number of times this week!</em>  </div>
+							</div>
+							
+							<hr>
+							<div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-info fa-2x aqua-i" aria-hidden="true"></i></div>
+ 							<div class="col-md-10"><span> Overview </span></div>
+							</div>
+							<hr>
+
+							    <div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-map-marker fa-2x aqua-i" aria-hidden="true"></i></div>
+ 							<div class="col-md-10"> <span> Madhapur, Hyderabad </span></div>
+							</div>
+							<hr>
+							<div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-home fa-2x aqua-i" aria-hidden="true"></i></div>
+ 							<div class="col-md-10"><span> Banquet Hall </span></div>
+							</div>
+							<hr>
+							<div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-group fa-2x aqua-i" aria-hidden="true"></i></div>
+ 						 	<div class="col-md-10"><span> 3000 </span></div>
+							</div>
+							<hr>
+							    <div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-inr fa-2x aqua-i" aria-hidden="true"></i></div>
+ 							<div class="col-md-10"><ul><li><b>VEG:</b> <span>1300</span> Per Person</li><li><b>NON-VEG:</b> <span>1600</span> Per Person</li></ul></div>
+							</div>
+							<hr>
+							<div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-sun-o fa-2x aqua-i" aria-hidden="true"></i></div>
+ 							<div class="col-md-10">Indoor and Outdoor</div>
+							</div>
+							<hr>
+							<div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-wifi fa-2x aqua-i" aria-hidden="true"></i></div>
+ 							<div class="col-md-10"><b>Amenities:</b> <span><ul> <li>DJ</li> <li>AC</li> <li>Fireworks Display</li> <li>Parking/Valet</li></span></div>
+							</div>
+							<hr>
+							<div class="row">
+  							<div class="col-md-2 flex-center"><i class="fa fa-warning fa-2x aqua-i" aria-hidden="true"></i></div>
+ 							<div class="col-md-10"><b>Rules:</b> <span>No Outside Catering</span></div>
+							</div>
+							<hr>
+
+                                                          
+
+                            </div>
+                            <!--Product-->
+
+                        </div>
+                    </div>
+                    <!--/.First row-->
+
+                    
+                </div>
+                <!--/.Main column-->
+
+            </div>
+        </div>
+        <!--/.Main layout-->
+
+    </main>
+
+
+</body>
+</html>
