@@ -39,10 +39,10 @@
                 </a>
                 <ul class="nav navbar-nav ml-auto nav-flex-icons">
                     <li class="nav-item">
-                        <a class="nav-link" href="#story">our story</a>
+                        <a class="nav-link" href="#story">Our Story</a>
                     </li>
                     <li class="nav-item log_in">
-                        <a class="nav-link" href="#!" id="login_with_google">log in    <i class="fa fa-google"></i></a>
+                        <a class="nav-link" href="#!" id="login_with_google">Log in / Sign up  <i class="fa fa-google"></i></a></a>
                     </li>
                     <li class="nav-item dropdown btn-group">
                         <a id="user_name" class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">user</a>
@@ -91,7 +91,7 @@
     <!--/.Mask-->
     <div class="container">
         <div id="story" class="divider-new">
-            <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">our story</h2>
+            <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">Our Story</h2>
         </div>
         <!--Section: About-->
         <section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s">
@@ -105,10 +105,10 @@
 
               To fix these blemishes we came up with <b>evntbindr.</b>
               evntbindr.  is an event organizing platform, in which people can customize their exceptional days. Our mission is to enable event organization by connecting hosts, service providers, and physical spaces. Despite the several rocks that will be thrown at our heads, we hope to become the <em>world’s largest online event organizers.</em></p>
-        </section>
+        </section
         <!--Section: About-->
         <div class="divider-new">
-            <h2 class="h2-responsive wow fadeIn">hot venues</h2>
+            <h2 class="h2-responsive wow fadeIn">Hot Venues</h2>
         </div>
         <!--Section: Best features-->
         <section id="best-features">
@@ -187,7 +187,7 @@
                     <!--Card-->
                     <div class="card wow fadeIn" data-wow-delay="0.6s">
                         <!--Card image-->
-                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(37).jpg" class="img-fluid" alt="">
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(37).jpg" class="img-fluid " alt="">
                         <a>
                             <div class="mask"></div>
                         </a>
@@ -209,7 +209,7 @@
         </section>
         <!--/Section: Best features-->
         <div class="divider-new">
-            <h2 class="h2-responsive wow fadeIn">find us</h2>
+            <h2 class="h2-responsive wow fadeIn">Find Us</h2>
         </div>
         <!--Section: Contact-->
         <section id="contact">
@@ -306,7 +306,7 @@
         <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2017 Copyright: <a href="http://www.github.com/sathp/evntbindr_fleming"> evntbindr.</a> Developed with <span class="glyphicon glyphicon-heart">love</span> by <a href="http://www.ahamlearning.com">Dhinchak Pooja Fan Association</a>.
+                © 2017 Copyright: <a href="http://www.github.com/sathp/evntbindr_fleming"> evntbindr.</a> Developed with <span class="glyphicon glyphicon-heart">love</span> by <a href="http://www.ahamlearning.com">Team Fleming at Techpreneurship Bootcamp, Aham Learning Institute</a>.
             </div>
         </div>
         <!--/.Copyright-->
@@ -364,6 +364,8 @@
         messagingSenderId: "111766807795"
     };
     firebase.initializeApp(config);
+    var database = firebase.database();
+
 
     var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -419,6 +421,8 @@
 
     });
     </script>
+
+
 </body>
 
 </html>
