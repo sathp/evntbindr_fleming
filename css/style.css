@@ -78,6 +78,9 @@ input[type="text"]:focus:not([readonly])+label {
         margin-bottom: 1rem;
         color: #1C2331;
     }
+    .img-circle {
+    border-radius: 5 0%;
+    }
       main {
         margin-top: 3rem;
     }
