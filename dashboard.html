@@ -99,7 +99,7 @@
             </div>
             <!--/.Sidebar-->
             <div class="col-md-9">
-                <h5>YOUR VENUES</h5> <a class="btn btn-large btn-primary" style="height: 70px; width:70px;border-radius: 60%; position: fixed; bottom: 15px; right: 15px;"><i class="fa fa-plus fa-lg flex-center"></i></a>
+                <h5>YOUR VENUES</h5>
                 <div class="row">
                     <div class="col-lg-6">
                         <!--Card-->
@@ -118,7 +118,7 @@
                         </div>
                         <!--/.Card-->
                     </div>
-                                        <div class="col-lg-6">
+                    <div class="col-lg-6">
                         <!--Card-->
                         <div class="card">
                             <!--Card image-->
@@ -136,6 +136,19 @@
                         <!--/.Card-->
                     </div>
                 </div>
+                <!--Registration Form and FAB-->
+                <a class="btn btn-large btn-primary z-depth-2" style="height: 70px; width:70px;border-radius: 60%; position: fixed; bottom: 15px; right: 15px;" onclick="show('reg_form')"><i class="fa fa-plus fa-lg flex-center"></i></a>
+                <!--Panel-->
+                <div class="card text-center z-depth-2" style="position: fixed; z-index: 1000; top: 30px; display: none;" id="reg_form">
+                    <div class="card-block">
+                        <h4 class="card-title">Register your venue</h4>
+                        <hr class="">
+                        <a href="" style="position: absolute; top: 10px; right: 10px;" onclick="hide('reg_form')"><i class="fa fa-close aqua-i"></i></a>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a class="btn aqua">Add</a>
+                    </div>
+                </div>
+                <!--/.Panel-->
             </div>
         </div>
     </div>
@@ -223,6 +236,15 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script>
     new WOW().init();
+    </script>
+    <script type="text/javascript">
+    function show(target) {
+        document.getElementById(target).style.display = 'block';
+    }
+
+    function hide(target) {
+        document.getElementById(target).style.display = 'none';
+    }
     </script>
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script>
