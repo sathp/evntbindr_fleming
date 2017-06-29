@@ -2,352 +2,298 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <title>Material Design Bootstrap</title>
-
+    <title>evntbindr. | The world's party planner</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
-
-    <!-- Template styles -->
+    <link href="css/style.css" rel="stylesheet">
     <style rel="stylesheet">
-        /* TEMPLATE STYLES */
-        
-        main {
-            padding-top: 3rem;
-            padding-bottom: 2rem;
-        }
-        
-        .widget-wrapper {
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e0e0e0;
-            margin-bottom: 2rem;
-        }
-         
-        .reviews {
-            text-align: center;
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 1rem;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .price {
-            position: absolute;
-            left: 0;
-            top: 0;
-            margin-top: -2px;
-        }
-        
-        .price .tag {
-            margin: 0;
-        }
-          .navbar {
-            background-color: #676b74;
-        }
-        
-        footer.page-footer {
-            background-color: #676b74;
-            margin-top: 2rem;
-        }
-        .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-button:hover, a:hover {
-  opacity: 0.7;
-}
-#product-wrapper{ 
-    background-color: #008f95;
-    padding: 15px;
-    text-align: center;
-    width: 720px;
-}
-</style>
-
+    /* TEMPLATE STYLES */
+    
+    .avatar {
+        border-radius: 50%;
+        width: 120px;
+        height: auto;
+        margin: -65px auto 0;
+        border: 5px solid #fff;
+        background: #FFF;
+    }
+    
+    .avatar img {
+        width: 100%;
+    }
+    </style>
 </head>
 
 <body>
-
-
+    <!--Navigation & Intro-->
     <header>
-
         <!--Navbar-->
-        <nav class="navbar navbar-toggleable-md navbar-dark">
+        <nav class="navbar navbar-toggleable-md navbar-dark ">
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <strong>Navbar</strong>
+                    <strong>evntbindr.</strong>
                 </a>
-                <div class="collapse navbar-collapse" id="navbarNav1">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Pricing</a>
-                        </li>
-                        <li class="nav-item dropdown btn-group">
-                            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
-                                <a class="dropdown-item">Action</a>
-                                <a class="dropdown-item">Another action</a>
-                                <a class="dropdown-item">Something else here</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="form-inline waves-effect waves-light">
-                        <input class="form-control" type="text" placeholder="Search">
-                    </form>
-                </div>
+                <ul class="nav navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item log_in">
+                        <a class="nav-link" href="#!" id="login_with_google">log in  <i class="fa fa-google"></i></a>
+                    </li>
+                    <li class="nav-item dropdown btn-group">
+                        <a id="user_name" class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">user</a>
+                        <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item"><i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a>
+                            <a class="dropdown-item" id="logout" href="index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             </div>
         </nav>
-	    <!--/.Navbar-->
-
+        <!--/.Navbar-->
     </header>
-
-    <main>
-
-        <!--Main layout-->
-        <div class="container">
-            <div class="row">
-
-                <!--Sidebar-->
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
-
+    <!--/Navigation & Intro-->
+    <!--Main layout-->
+    <div class="container">
+        <div class="divider-new">
+            <h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s"><i class="fa fa-dashboard" aria-hidden="true"></i>  Dashboard</h2>
+        </div>
+        <div class="row" style="margin-bottom: 10px;">
+            <!--Sidebar-->
+            <div class="col-lg-3 col-md-3 wow fadeIn" data-wow-delay="0.2s">
                 <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
-                        <div class="card">
-  <img src="/Users/vaishnavireddy/Desktop/icon1.png" alt="John" style="width:100%">
-  <br>
-
-  <div class="container">
-    <h1>John Doe</h1>
-    <p class="title">CEO & Founder, Example</p>
-    <p>Phone Numero</p>
-    <div style="margin: 24px 0;">
-      
-   </div>
-   <p><button>Edit</button></p>
-  </div>
-</div>
-                    </div>
-
-                    <div class="widget-wrapper">
-                        
+                    <div class="card">
+                        <div class="avatar">
+                            <img id="user_img" src="http://via.placeholder.com/64x64" class="img-fluid rounded-circle z-depth-1">
+                        </div>
+                        <div class="container">
+                            <h4><span id="dash_name">Full Name</span></h4>
+                            <p class="title"><span id="user_email">e-mail id</span>
+                                <br><span id="user_phone">phone number</span></p>
+                            <div style="margin: 24px 0;">
+                            </div>
+                        </div>
                         <div class="list-group">
                             <a href="#" class="list-group-item active">Dashboard</a>
-                            <a href="/Users/vaishnavireddy/Desktop/projects/evntbindr_fleming/myvenues.html" class="list-group-item">My Venues</a>
-                            
+                            <a class="list-group-item">
+                                <p>Messages <span class="badge grey">Coming Soon</span></p>
+                            </a>
                         </div>
                     </div>
-
                 </div>
-                <!--/.Sidebar-->
-
-                <!--Main column-->
-                <div class="col-lg-8">
-
-                    <!--First row-->
-                    <div class="row wow fadeIn" data-wow-delay="0.4s">
-                        <div class="col-md-12">
-                            <!--Product-->
-                             <div class="col-lg-8">
-                                <div class="product-wrapper" style="background-color: #008f95;padding: 15px;text-align: center;width: 720px;">   
-                                <div class="container" style="color: #ffffff">
-                                <h4>32788789</h4>                             
-                                <h5>Total Page Views</h5>   
-                                </div>                          
-                               
-                                    <!--Card Primary-->
-                                   <!--  <div class="card card-primary text-center z-depth-2" style="background-color: #008f95;">
-                                        <div class="card-block">
-                                            <p class="white-text" style="font-size: 21px"> 3128283 </p>
-                                            <span class="white-text" = style="font-size:16px;">Total Page Views</span>
-                                        </div>
-                                    </div> -->
-                                </div>
-                                
-                                    
-                                </div>
-                                <!--/.Featured image-->
-
-                                </div>
-                            <!--Product-->
-
-                        </div>
+                <br>
+                <div class="card z-index-2">
+                    <div class="container papaya" style="padding:15px;text-align: center;">
+                        <h4><span id="user_views">xxxxxx</span></h4>
+                        <p class="title" style="color: #ffffff;"><strong>people are interested in your venue this week</strong></p>
                     </div>
-                    <!--/.First row-->
-
-
                 </div>
-                <!--/.Main column-->
-
+            </div>
+            <!--/.Sidebar-->
+            <div class="col-md-9">
+                <h5>YOUR VENUES</h5> <a class="btn btn-large btn-primary" style="height: 70px; width:70px;border-radius: 60%; position: fixed; bottom: 15px; right: 15px;"><i class="fa fa-plus fa-lg flex-center"></i></a>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!--Card-->
+                        <div class="card">
+                            <!--Card image-->
+                            <div class="hm-white-slight">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="">
+                            </div>
+                            <!--/.Card image-->
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <h4 class="card-title"><span id="venue_name">Venue Name</span></h4><a href="#" class="btn btn-primary"><i class="fa fa-pencil left"></i> EDIT</a>
+                            </div>
+                            <!--/.Card content-->
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                                        <div class="col-lg-6">
+                        <!--Card-->
+                        <div class="card">
+                            <!--Card image-->
+                            <div class="hm-white-slight">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="">
+                            </div>
+                            <!--/.Card image-->
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <h4 class="card-title"><span id="venue_name">Venue Name</span></h4><a href="#" class="btn btn-primary"><i class="fa fa-pencil left"></i> EDIT</a>
+                            </div>
+                            <!--/.Card content-->
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                </div>
             </div>
         </div>
-        <!--/.Main layout-->
-
+    </div>
+    <!--/.Main layout-->
     </main>
-
     <!--Footer-->
-    <footer class="page-footer center-on-small-only">
-
+    <footer class="page-footer center-on-small-only nopadding">
         <!--Footer Links-->
         <div class="container-fluid">
             <div class="row">
-
                 <!--First column-->
-                <div class="col-md-3 offset-lg-1 hidden-lg-down">
-                    <h5 class="title">ABOUT MATERIAL DESIGN</h5>
+                <div class="col-lg-3 offset-lg-1 hidden-lg-down">
+                    <h5 class="title">About evntbindr.</h5>
                     <p>Material Design (codenamed Quantum Paper) is a design language developed by Google. </p>
-
-                    <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS, and JS framework - Bootstrap.</p>
                 </div>
                 <!--/.First column-->
-
                 <hr class="hidden-md-up">
-
                 <!--Second column-->
                 <div class="col-lg-2 col-md-4 offset-lg-1">
-                    <h5 class="title">First column</h5>
+                    <h5 class="title"><strong>First column</strong></h5>
                     <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
+                        <li>
+                            <h6><a href="#!">Link 1</a></li></h6>
+                            <li>
+                                <h6><a href="#!">Link 2</a></li></h6>
+                                <li>
+                                    <h6><a href="#!">Link 3</a></li></h6>
+                                    <li>
+                                        <h6><a href="#!">Link 4</a></li></h6>
                     </ul>
                 </div>
                 <!--/.Second column-->
-
                 <hr class="hidden-md-up">
-
                 <!--Third column-->
                 <div class="col-lg-2 col-md-4">
-                    <h5 class="title">Second column</h5>
+                    <h5 class="title"><strong>Second column</strong></h5>
                     <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
+                        <li>
+                            <h6><a href="#!">Link 1</a></li></h6>
+                            <li>
+                                <h6><a href="#!">Link 2</a></li></h6>
+                                <li>
+                                    <h6><a href="#!">Link 3</a></li></h6>
+                                    <li>
+                                        <h6><a href="#!">Link 4</a></li></h6>
                     </ul>
                 </div>
                 <!--/.Third column-->
-
                 <hr class="hidden-md-up">
-
                 <!--Fourth column-->
                 <div class="col-lg-2 col-md-4">
-                    <h5 class="title">Third column</h5>
+                    <h5 class="title"><strong>Third column</strong></h5>
                     <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
+                        <li>
+                            <h6><a href="#!">Link 1</a></li></h6>
+                            <li>
+                                <h6><a href="#!">Link 2</a></li></h6>
+                                <li>
+                                    <h6><a href="#!">Link 3</a></li></h6>
+                                    <li>
+                                        <h6><a href="#!">Link 4</a></li></h6>
                     </ul>
                 </div>
                 <!--/.Fourth column-->
-
             </div>
         </div>
         <!--/.Footer Links-->
-
-        <hr>
-
-        <!--Call to action-->
-        <div class="call-to-action">
-            <h4>Material Design for Bootstrap</h4>
-            <ul>
-                <li>
-                    <h5>Get our UI KIT for free</h5></li>
-                <li><a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-primary" rel="nofollow">Sign up!</a></li>
-                <li><a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default" rel="nofollow">Learn more</a></li>
-            </ul>
-        </div>
-        <!--/.Call to action-->
-
         <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2015 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>
-
+                © 2017 Copyright: <a href="http://www.github.com/sathp/evntbindr_fleming"> evntbindr.</a> Developed with <span class="glyphicon glyphicon-heart">love</span> by <a href="http://www.ahamlearning.com">Dhinchak Pooja Fan Association</a>.
             </div>
         </div>
         <!--/.Copyright-->
-
     </footer>
     <!--/.Footer-->
-
-
     <!-- SCRIPTS -->
-
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/tether.min.js"></script>
-
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-   
     <script>
     new WOW().init();
     </script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAnTgoI54Z-LiR94TUDmu3ejDyrP0M_u-k",
+        authDomain: "evntbindr-a5d5e.firebaseapp.com",
+        databaseURL: "https://evntbindr-a5d5e.firebaseio.com",
+        projectId: "evntbindr-a5d5e",
+        storageBucket: "evntbindr-a5d5e.appspot.com",
+        messagingSenderId: "111766807795"
+    };
+    firebase.initializeApp(config);
 
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    $('#login_with_google').click(function() {
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
+    });
+
+    $('#logout').click(function() {
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+        }).catch(function(error) {
+            // An error happened.
+        });
+    });
+
+    firebase.auth().onAuthStateChanged(function(user) {
+
+        if (user) {
+            // User is signed in.
+            // 1. Logged In - Show Logout
+            console.log("User is Logged In");
+            console.log(user);
+            console.log("Email:", user.email, user.displayName, user.photoURL);
+
+            $('#user_name').show();
+            $('#user_name').html(user.displayName);
+            $('#dash_name').html(user.displayName);
+            $('#user_img').attr('src', user.photoURL);
+            $('#user_email').html(user.email);
+            $('#login_with_google').hide();
+
+            // ...
+        } else {
+            // User is signed out.
+            // 2. Logged Out/ Not Logged In - Show "Login with Google"
+            console.log("User is not logged in");
+            $('#user_name').hide();
+            $('#login_with_google').show();
+            // ...
+        }
+
+    });
+    </script>
 </body>
 
 </html>
