@@ -57,6 +57,51 @@
             background-color: #676b74;
             margin-top: 2rem;
         }
+        .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
     </style>
 </head>
 <body>
@@ -71,15 +116,21 @@
                 <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
 
                     <div class="widget-wrapper">
-                        <h4>Categories:</h4>
-                        <br>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item active">Woman</a>
-                            <a href="#" class="list-group-item">Man</a>
-                            <a href="#" class="list-group-item">Shoes</a>
-                            <a href="#" class="list-group-item">T-shirt</a>
-                            <a href="#" class="list-group-item">Jewellery</a>
-                        </div>
+                       <div class="card">
+  
+  <div class="container">
+    <h1>John Doe</h1>
+    <p class="title">CEO & Founder, Example</p>
+    <p>Harvard University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a> 
+      <a href="#"><i class="fa fa-twitter"></i></a>  
+      <a href="#"><i class="fa fa-linkedin"></i></a>  
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+   </div>
+   <p><button class="btn" disabled="" >Message</button></p>
+  </div>
+</div>
                     </div>
 
                     <div class="widget-wrapper wow fadeIn" data-wow-delay="0.4s">
@@ -197,6 +248,37 @@
         <!--/.Main layout-->
 
     </main>
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only nopadding">
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--First column-->
+                <div class="col-lg-3 offset-lg-1 hidden-lg-down">
+                    <h5 class="title">About evntbindr.</h5>
+                    <p>EVNTBINDR is an online platform meant to make event planning easy. </p>
+                </div>
+                <!--/.First column-->
+                <hr class="hidden-md-up">
+                <!--Second column-->
+                <div class="col-lg-6 col-md-9">
+                  <h5 class="title">CONNECT WITH US</h5>
+                  <ul>
+                  <li><a href="https://www.facebook.com/evntbindr/"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook </li> </a>
+                  <li><a href="https://www.instagram.com/evntbindr/"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram </li></a>
+                </div>
+            </div>
+        </div>
+        <!--/.Footer Links-->
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2017 Copyright: <a href="http://www.github.com/sathp/evntbindr_fleming"> evntbindr.</a> Developed with <span class="glyphicon glyphicon-heart">love</span> by <a href="http://www.ahamlearning.com">Team Fleming at Techpreneurship Bootcamp, Aham Learning Hub</a>.
+            </div>
+        </div>
+        <!--/.Copyright-->
+    </footer>
+    <!--/.Footer-->
 
 
 </body>
