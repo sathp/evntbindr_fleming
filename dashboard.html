@@ -306,14 +306,14 @@
   };
   firebase.initializeApp(config);
 
+
   var database = firebase.database();
   var venuesRef = database.ref('venues');
   var usersRef = database.ref('users');
  
   var storage = firebase.storage();
 
-var storageRef = firebase.storage().ref();
-
+  var storageRef = firebase.storage().ref();
 
     var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -374,11 +374,11 @@ var storageRef = firebase.storage().ref();
     </script>
     <script>
        
-          function venue_function(){
-
-
-        var display = {
+        function venue_function(){
+           var venuedata = {
             userName: firebase.auth().currentUser.displayName,
+            
+            uid: firebase.auth().currentUser.uid,
             name : $('#name').val(),
             description : $('#description').val(),
             owner : $('#owner').val(),
@@ -390,17 +390,36 @@ var storageRef = firebase.storage().ref();
             amenities : $('#amenities').val(),
             rules : $('#rules').val()
 
-        } 
-        
-        var title = {
+        };
+
+        var userdata = {
+            userName: firebase.auth().currentUser.displayName,
+            
+            uid: firebase.auth().currentUser.uid,
             name : $('#name').val()
-        }
+        };
         
+       /* var newPostKey = firebase.database().ref().child('venues').push().key;
+        var updates = {};
+        updates['/venues/' + newPostKey] = venuedata;
+        updates['/users/' + uid + '/' + newPostKey] = venuedata;
+        firebase.database().ref().update(updates);*/
+        
+/*    var firebaseref = firebase.database().ref()  
     
-    var firebaseref = firebase.database().ref()  
+    firebaseref.child(33).push(venuedata);
     
-    firebaseref.child(45677).set(display);
-    }
+    }*/
+    var newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+   updates['/venues/' + newPostKey] = venuedata;
+   updates['/users/' + newPostKey] = userdata;
+/*  updates {newPostKey] = venuedata;*/
+
+  return firebase.database().ref().update(updates);
+}
     </script>
     <script type="text/javascript">
     var fileInputTextDiv = document.getElementById('file_input_text_div');
