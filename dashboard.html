@@ -125,7 +125,7 @@
             <!--/.Sidebar-->
             <div class="col-md-9">
                 <h5>YOUR VENUES</h5>
-                <div class="row">
+                <div class="row" id="venues">
                     <div class="col-lg-6">
                         <!--Card-->
                         <div class="card">
@@ -314,6 +314,7 @@
   var storage = firebase.storage();
 
   var storageRef = firebase.storage().ref();
+  var u;
 
     var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -345,13 +346,13 @@
     });
 
     firebase.auth().onAuthStateChanged(function(user) {
-
         if (user) {
+            u = user
             // User is signed in.
             // 1. Logged In - Show Logout
             console.log("User is Logged In");
-            console.log(user);
-            console.log("Email:", user.email, user.displayName, user.photoURL);
+            //console.log(user);
+            //console.log("Email:", user.email, user.displayName, user.photoURL);
 
             $('#user_name').show();
             $('#user_name').html(user.displayName);
@@ -360,6 +361,22 @@
             $('#user_email').html(user.email);
             $('#login_with_google').hide();
 
+            usersRef.once("value").then(function(snapshot) {
+                snapshot.forEach(function(post) {
+                    if(u.uid === post.val().uid) {
+                        $("#venues").append('<div class="col-lg-6">' +
+                        '<div class="card">' +
+                            '<div class="hm-white-slight">' +
+                                '<img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid" alt="">' +
+                            '</div>' +
+                            '<div class="card-block">' +
+                                '<h4 class="card-title"><span id="venue_name">Venue Name</span></h4><a href="#" class="btn btn-primary"><i class="fa fa-pencil left"></i> EDIT</a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>');
+                    }
+                });
+            });
             // ...
         } else {
             // User is signed out.
@@ -370,14 +387,14 @@
             // ...
         }
 
-    });
+    })
     </script>
     <script>
        
         function venue_function(){
+          
            var venuedata = {
             userName: firebase.auth().currentUser.displayName,
-            
             uid: firebase.auth().currentUser.uid,
             name : $('#name').val(),
             description : $('#description').val(),
@@ -388,10 +405,11 @@
             capacity: $('#capacity').val(),
             price : $('#price').val(),
             amenities : $('#amenities').val(),
-            rules : $('#rules').val()
+            rules : $('#rules').val(),
+           
 
         };
-
+ 
         var userdata = {
             userName: firebase.auth().currentUser.displayName,
             
@@ -408,17 +426,26 @@
 /*    var firebaseref = firebase.database().ref()  
     
     firebaseref.child(33).push(venuedata);
-    
+    rt
     }*/
     var newPostKey = firebase.database().ref().child('posts').push().key;
 
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  var updates = {};
-   updates['/venues/' + newPostKey] = venuedata;
-   updates['/users/' + newPostKey] = userdata;
-/*  updates {newPostKey] = venuedata;*/
+  // Write the new post's data simultaneously in the posts list and the user's post list.t
+  console.log($("#mediaCapture").prop("files")[0]);
+  var file = $("#mediaCapture").prop("files")[0];
+  console.log(newPostKey + "." + file.name.split('.').pop());
 
-  return firebase.database().ref().update(updates);
+  storageRef.child(newPostKey + "." + file.name.split('.').pop()).put(file).then(function(snapshot) {
+        console.log(snapshot);
+      var updates = {};
+      venuedata["key"] = newPostKey;
+       updates['/venues/' + newPostKey] = venuedata;
+       updates['/users/' + u.uid] = venuedata;
+    /*  updates {newPostKey] = venuedata;*/
+
+      firebase.database().ref().update(updates);
+  })
+  return false;
 }
     </script>
     <script type="text/javascript">
